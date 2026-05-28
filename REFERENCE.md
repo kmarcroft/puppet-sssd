@@ -7,6 +7,7 @@
 ### Classes
 
 * [`sssd`](#sssd): Base sssd class
+* [`sssd::join`](#sssd--join): Joins the system to an Active Directory domain
 
 ## Classes
 
@@ -207,4 +208,22 @@ Data type: `String`
 Name of authselect profile to use
 
 Default value: `'sssd'`
+
+---
+
+### <a name="sssd--join"></a>`sssd::join`
+
+Joins the system to an Active Directory domain
+
+Installs required packages and uses adcli to join the AD domain.
+AD join credentials are expected to be provided via Hiera (password via eyaml).
+
+#### Hiera keys
+
+The following Hiera keys are required:
+
+* `sssd::join::ad_pass` — `Sensitive[String]` — Password for the AD join user (eyaml-encrypted).
+* `sssd::join::ad_ou` — `String` — Organisational unit to place the computer account in.
+* `sssd::join::ad_user` — `String` — AD user account with permission to join machines to the domain.
+* `sssd::join::ad_domain` — `String` — Active Directory domain to join.
 

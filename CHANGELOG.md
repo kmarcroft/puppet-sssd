@@ -1,3 +1,10 @@
+### 2026-05-28 (4.0.4)
+  * Add sssd::join class for Active Directory domain joining via adcli
+  * Use Sensitive[String] for AD join password to prevent exposure in Puppet logs
+  * Wrap exec command in Sensitive() to redact password from Puppet reports
+  * Quote all shell variables in adcli command to prevent word splitting
+  * Use absolute paths in exec unless clause
+
 ### 2026-03-28 (4.0.3)
   * Remove REFERENCE.md generation from CI build job
 
