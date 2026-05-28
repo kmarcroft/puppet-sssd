@@ -222,7 +222,7 @@ AD join credentials are expected to be provided via Hiera (password via eyaml).
 
 The following Hiera keys are required:
 
-* `sssd::join::ad_pass` — `Sensitive[String]` — Password for the AD join user (eyaml-encrypted).
+* `sssd::join::ad_pass` — `String` (eyaml-encrypted) — Password for the AD join user. Wrapped in `Sensitive()` by the class after lookup.
 * `sssd::join::ad_ou` — `String` — Organisational unit to place the computer account in.
 * `sssd::join::ad_user` — `String` — AD user account with permission to join machines to the domain.
 * `sssd::join::ad_domain` — `String` — Active Directory domain to join.

@@ -1,3 +1,7 @@
+### 2026-05-28 (4.0.5)
+  * Fix catalog compilation error: wrap eyaml-decrypted ad_pass in Sensitive() explicitly
+    (hiera-eyaml returns a plain String; Sensitive[String] lookup type caused type mismatch)
+
 ### 2026-05-28 (4.0.4)
   * Add sssd::join class for Active Directory domain joining via adcli
   * Use Sensitive[String] for AD join password to prevent exposure in Puppet logs
