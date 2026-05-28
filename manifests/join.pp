@@ -11,7 +11,7 @@ class sssd::join {
   }
 
   # Lookup AD join parameters from Hiera (password from eyaml)
-  $ad_pass   = lookup('sssd::join::ad_pass', Sensitive[String])
+  $ad_pass   = Sensitive(lookup('sssd::join::ad_pass', String))
   $ad_ou     = lookup('sssd::join::ad_ou', String)
   $ad_user   = lookup('sssd::join::ad_user', String)
   $ad_domain = lookup('sssd::join::ad_domain', String)
