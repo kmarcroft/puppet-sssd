@@ -5,8 +5,8 @@
 #
 class sssd::join {
   $base_authentication_packages = $facts['os']['family'] ? {
-    'Debian' => ['sssd-tools', 'adcli', 'packagekit'],
-    'RedHat' => ['sssd-tools', 'adcli', 'PackageKit'],
+    'Debian' => ['sssd-tools', 'adcli', 'packagekit', 'krb5-user'],
+    'RedHat' => ['sssd-tools', 'adcli', 'PackageKit', 'krb5-workstation'],
     default  => ['sssd-tools', 'adcli', 'PackageKit'],
   }
 

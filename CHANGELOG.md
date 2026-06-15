@@ -1,3 +1,7 @@
+### 2026-06-15 (4.0.6)
+  * Add krb5-workstation to RedHat package list in sssd::join (provides klist, required on all EL 8/9/10)
+  * Add krb5-user to Debian package list in sssd::join (provides klist on Debian/Ubuntu)
+
 ### 2026-05-28 (4.0.5)
   * Fix catalog compilation error: wrap eyaml-decrypted ad_pass in Sensitive() explicitly
     (hiera-eyaml returns a plain String; Sensitive[String] lookup type caused type mismatch)

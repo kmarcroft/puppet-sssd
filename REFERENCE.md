@@ -218,6 +218,13 @@ Joins the system to an Active Directory domain
 Installs required packages and uses adcli to join the AD domain.
 AD join credentials are expected to be provided via Hiera (password via eyaml).
 
+#### Packages installed
+
+| OS family | Packages |
+|-----------|----------|
+| Debian    | `sssd-tools`, `adcli`, `packagekit`, `krb5-user` |
+| RedHat    | `sssd-tools`, `adcli`, `PackageKit`, `krb5-workstation` |
+
 #### Hiera keys
 
 The following Hiera keys are required:
