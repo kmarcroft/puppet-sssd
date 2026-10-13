@@ -9,3 +9,7 @@ sssd::enable_mkhomedir_flags:
   - 'with-mkhomedir'
 
 sssd::disable_mkhomedir_flags: []
+
+sssd::config_group: 'sssd'
+sssd::config_mode: '0640'
+sssd::config_owner: 'root'
